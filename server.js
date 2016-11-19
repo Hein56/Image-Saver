@@ -4,10 +4,10 @@ var multer = require('multer');
 var upload = multer({dest: 'public/uploads/'});
 
 app.use(express.static(__dirname + "/public"));
-
 app.post('/', upload.any(),function(req, res){
-    res.send(req.files);
+  res.redirect('/');
 });
 
 app.listen(3000);
 console.log("server running on port 3000");
+
